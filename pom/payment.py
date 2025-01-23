@@ -23,7 +23,7 @@ class Payment:
             
             s.click_element(self._locator['btn_continue5'])
             s.click_element(self._locator['btn_confirm'])
-            
+            time.sleep(2)
 
     def payment(self,fname,lname,address,phone,cvv,card_no,city,pin_code,country,credit_cart,exp_mon,exp_year):
         

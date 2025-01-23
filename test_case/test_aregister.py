@@ -5,7 +5,7 @@ from utility.excel import read_headers
 from utility.excel import read_data
 
 headers=read_headers("test_registration","smoke")
-data=read_data("test_registration","smoke")
+data=read_data("test_registration","smoke") 
 print(headers)
 print(data)
 @mark.parametrize(headers,data)
