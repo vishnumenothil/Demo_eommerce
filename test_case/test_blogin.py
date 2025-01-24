@@ -4,12 +4,14 @@ from pytest import mark
 from pom.loginpage import loginpage
 from pom.homepage import Homepage
 from utility.excel import read_headers,read_data
-
+from utility.logger import LoggGen
 headers=read_headers("test_login_positive","smoke")
 data=read_data("test_login_positive","smoke")
 
 @mark.parametrize(headers,data)
 def test_login(setup_tear_down,_config,request,email,password):
+    log=LoggGen.loggen()
+    log.info("***********test loging*************")
     s=SeleniumWrapper(setup_tear_down,)
     homepage=Homepage(setup_tear_down)
     homepage.login()    

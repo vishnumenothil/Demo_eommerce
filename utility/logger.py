@@ -11,3 +11,12 @@ class LoggGen:
         logger.setLevel(logging.INFO)
 
         return logger
+    
+log=LoggGen.loggen()
+log.info("*******************loging****************")
+log.info("*******************loging****************")
+log.info("*******************loging****************")
+log.info("*******************loging****************")
+log.info("*******************loging****************")
+log.info("*******************loging****************")
+log.info("*******************loging****************")

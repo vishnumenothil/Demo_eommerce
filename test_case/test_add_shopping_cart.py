@@ -17,7 +17,7 @@ def test_shopping(setup_tear_down,email,password,item,itemname,quantity):
     driver=setup_tear_down
     home=Homepage(driver)
     home.login()
-    lobj=loginpage(driver)
+    lobj=loginpage(driver)  
     lobj.login(email,password)
     # print(driver.title)
     if driver.title == 'Demo Web Shop':
