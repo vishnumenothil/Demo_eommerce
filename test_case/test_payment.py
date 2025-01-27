@@ -7,6 +7,7 @@ from utility.excel import read_headers,read_data
 from pom.payment import Payment
 from pom.shopping_cart import Shopping_cart
 from utility.logger import LoggGen
+from utility.take_screenshot import screenshot
 class Test_Payment:
     logger=LoggGen.loggen()
     header=read_headers("test_payment","shopping1")
@@ -38,7 +39,7 @@ class Test_Payment:
             self.logger.info("**********successfully payment placed**************")
  
         else:
-            driver.get_screenshot_as_file("screenshot/payment.png")
+            screenshot(driver)
             self.logger.info("**********failed payment**********8")
             assert False
             
