@@ -4,6 +4,7 @@ class Homepage:
 
     _locator=read_locator("homepage")
     _loc_pay=read_locator('paymentpage')
+    _loc_wish=read_locator("wishlist")
     def __init__(self,driver) -> None:
         self.driver=driver
                                                                                                              
@@ -24,5 +25,11 @@ class Homepage:
 
     def logout(self):
         s=SeleniumWrapper(self.driver)
-        s.click_element()
+        s.click_element(self._locator['a_logout'])
+    
+
+    def wishlist(self):
+        s=SeleniumWrapper(self.driver)
+        s.click_element(self._loc_wish['ink_wishlist'])
+        
     

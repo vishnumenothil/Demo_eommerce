@@ -1,10 +1,11 @@
 
-    from utility.lib  import SeleniumWrapper
-    from utility.excel import read_locator
+from utility.lib  import SeleniumWrapper
+from utility.excel import read_locator
 
-    class loginpage:
+class loginpage:
      
     _locators=read_locator("loginpage")
+   
     print(_locators)
     def __init__(self,driver) -> None:
             self.driver=driver
