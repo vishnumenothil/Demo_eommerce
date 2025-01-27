@@ -8,6 +8,7 @@ from pom.registrationpage import registration
 from time import sleep
 from pom.add_shopping_cart import Add_Shopping_cart
 from pom.shopping_cart import Shopping_cart
+from utility.take_screenshot import  screenshot
 
 
 header=read_headers("test_shopping","shopping1")
@@ -23,8 +24,7 @@ def test_shopping(setup_tear_down,email,password,item,itemname,quantity):
     if driver.title == 'Demo Web Shop':
         assert True
     else:
-        driver.get_screenshot_as_file("screenshot/screenshot.png")
-
+        screenshot(driver)
         assert False
     shope=Add_Shopping_cart(driver)
     shope.add_shopp_cart(item)

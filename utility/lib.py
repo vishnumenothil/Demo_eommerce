@@ -1,7 +1,7 @@
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.expected_conditions import  visibility_of_element_located
 from selenium.webdriver.support.wait import WebDriverWait
-
+from utility.take_screenshot import screenshot
 
 def  wait(func):
     def wrapper(*args,**kwargs):
@@ -9,11 +9,13 @@ def  wait(func):
         intance,locator=args  #to pass time out time from the command prompt
         
         # print(f"waiting for locator{locator}")
-
-        w=WebDriverWait(intance.driver,10)
-        v=visibility_of_element_located(locator)
-        w.until(v,message="element is not found ")
-    
+        try:
+            w=WebDriverWait(intance.driver,10)
+            v=visibility_of_element_located(locator)
+            w.until(v,message="element is not found ")
+        except:
+           screenshot(intance.driver)
+        
         return func(*args,**kwargs) 
     return wrapper 
     
